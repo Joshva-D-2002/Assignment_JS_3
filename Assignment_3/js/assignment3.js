@@ -68,5 +68,9 @@ function question4() {
 
 question4();
 
-// 4. Redirect to the homepage of google from the console.
+// 5. Redirect to the homepage of google from the console.
+
+setTimeout(function(){
+    location.href = 'https://www.google.co.in/';
+}, 65 * 1000);
 
