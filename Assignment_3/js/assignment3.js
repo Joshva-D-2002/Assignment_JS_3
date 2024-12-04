@@ -35,7 +35,7 @@ console.log(arr3);
 // d. To show an alert message after 10sec while the page is refereshed.
 
 function objectModels() {
-  console.log(screen.height);
+  console.log(window.innerHeight);
   console.log(location.host);
   if (!location.protocol.includes("https")) {
     console.warn("Https protocol not used");
@@ -49,12 +49,16 @@ objectModels();
 
 // 4. Store your basic details in localstorage of the browser every time the page loads, then console them and finally delete them after 1 minute of the page load.
 
-localStorage.setItem("firstName", "Joshva");
-localStorage.setItem("secondName", "D");
-localStorage.setItem("Age", 22);
-console.log(localStorage.getItem("firstName"));
-console.log(localStorage.getItem("secondName"));
-console.log(localStorage.getItem("Age"));
+const user = {
+  firstName : 'Joshva',
+  lastName : 'D',
+  age : 22
+}
+localStorage.setItem('user', JSON.stringify(user));
+localUser = JSON.parse(localStorage.getItem('user'));
+console.log(localUser.firstName);
+console.log(localUser.lastName);
+console.log(localUser.age);
 
 setTimeout(function () {
   localStorage.clear();
@@ -68,3 +72,5 @@ setTimeout(function () {
 setTimeout(function () {
   location.href = "https://www.google.co.in/";
 }, 65 * 1000);
+
+
